@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import Navbar from '@/components/shared/Navbar';
+import { satoshi } from '@/lib/fonts';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -13,10 +14,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang='en' suppressHydrationWarning>
-      <body>
+    <html lang='en' suppressHydrationWarning className={satoshi.variable}>
+      <body className='font-satoshi'>
         <Navbar />
-        <main className='min-h-screen bg-light-yellow md:p-10'>{children}</main>
+        <main className='min-h-screen p-4 bg-light-yellow md:p-10'>
+          {children}
+        </main>
       </body>
     </html>
   );

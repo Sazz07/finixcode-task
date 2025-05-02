@@ -1,6 +1,11 @@
 @import 'tailwindcss';
 @import 'tw-animate-css';
 
+html,
+body {
+  font-family: 'Satoshi', sans-serif;
+}
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
@@ -47,6 +52,9 @@
   --color-offwhite: var(--offwhite);
   --color-tertiary-light-gray: var(--tertiary-light-gray);
   --color-light-yellow: var(--light-yellow);
+  --color-deep-light-gray-stroke: var(--deep-light-gray-stroke);
+  --color-gray-body: var(--body-gray-color);
+  --font-satoshi: 'Satoshi', sans-serif;
 }
 
 :root {
@@ -90,6 +98,8 @@
   --offwhite: #f7f7f7;
   --tertiary-light-gray: #f6f6f6;
   --light-yellow: #f4f5ef;
+  --deep-light-gray-stroke: #e5e5e5;
+  --body-gray-color: #4a4a4a;
 }
 
 .dark {

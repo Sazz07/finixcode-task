@@ -8,7 +8,7 @@ import { Input } from '@/components/ui/input';
 import { MoreVertical } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
-interface Comment {
+type Comment = {
   id: string;
   author: {
     name: string;
@@ -17,11 +17,11 @@ interface Comment {
   content: string;
   timestamp: string;
   replies?: Comment[];
-}
+};
 
-interface CommentsSectionProps {
+type CommentsSectionProps = {
   comments: Comment[];
-}
+};
 
 export function CommentsSection({
   comments: initialComments,
@@ -58,7 +58,7 @@ export function CommentsSection({
           isReply ? 'bg-light-orange' : 'bg-secondary-pure-green'
         )}
       >
-        <div className='flex justify-between items-center mb-1'>
+        <div className='flex items-center justify-between mb-1'>
           <div className='flex items-center'>
             <div
               className={cn(
@@ -179,7 +179,7 @@ export function CommentsSection({
           placeholder='Write a comment'
           value={newComment}
           onChange={(e) => setNewComment(e.target.value)}
-          className='px-7 py-6 rounded-full'
+          className='py-6 rounded-full px-7'
         />
       </div>
     </div>

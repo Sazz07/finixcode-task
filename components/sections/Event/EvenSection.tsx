@@ -28,7 +28,7 @@ const EvenSection = () => {
         <div className='space-y-6 md:col-span-2'>
           <div className='grid grid-cols-1 gap-4'>
             {/* Event Title and Actions */}
-            <div className='flex justify-between items-start'>
+            <div className='flex items-start justify-between'>
               <div>
                 <h1 className='mb-3 text-3xl font-bold md:text-5xl text-tertiary-night-black'>
                   {eventData.title}
@@ -38,8 +38,8 @@ const EvenSection = () => {
                   <p className='text-gray-body'>{eventData.date}</p>
                 </span>
               </div>
-              <div className='flex gap-2 items-center md:gap-4'>
-                <button className='p-2 rounded-full border cursor-pointer hover:bg-gray-100 bg-tertiary-light-gray'>
+              <div className='flex items-center gap-2 md:gap-4'>
+                <button className='p-2 border rounded-full cursor-pointer hover:bg-gray-100 bg-tertiary-light-gray'>
                   <svg
                     xmlns='http://www.w3.org/2000/svg'
                     width='26'
@@ -57,7 +57,7 @@ const EvenSection = () => {
                     />
                   </svg>
                 </button>
-                <button className='p-2 rounded-full border cursor-pointer hover:bg-gray-100 bg-tertiary-light-gray'>
+                <button className='p-2 border rounded-full cursor-pointer hover:bg-gray-100 bg-tertiary-light-gray'>
                   <svg
                     xmlns='http://www.w3.org/2000/svg'
                     width='26'
@@ -126,7 +126,7 @@ const EvenSection = () => {
 
             {/* Tabs */}
             <TabsWithQuery defaultValue='info' className='w-full'>
-              <TabsList className='flex space-x-8 w-full'>
+              <TabsList className='flex w-full space-x-8'>
                 <TabsTrigger value='info' className='px-1 py-4'>
                   Info
                 </TabsTrigger>
@@ -154,7 +154,7 @@ const EvenSection = () => {
           <div className='sticky top-24'>
             {/* Booking Info */}
             <div className='p-6 bg-white rounded-lg shadow-sm'>
-              <div className='flex justify-between items-center p-2 mb-3 rounded-lg border md:mb-6 md:p-4'>
+              <div className='flex items-center justify-between p-2 mb-3 border rounded-lg md:mb-6 md:p-4'>
                 <div className='font-medium text-secondary-terra-cotta'>
                   {eventData.spots.left} spots left
                 </div>
@@ -168,7 +168,7 @@ const EvenSection = () => {
                 </div>
               </div>
               <button
-                className='py-3 w-full font-medium rounded-full transition md:text-lg md:py-4 text-tertiary-night-black bg-primary-jithbo hover:bg-secondary-pure-green cursor-pointer'
+                className='w-full py-3 font-medium transition rounded-full cursor-pointer md:text-lg md:py-4 text-tertiary-night-black bg-primary-jithbo hover:bg-secondary-pure-green'
                 onClick={() => setIsPaymentModalOpen(true)}
               >
                 Join event

@@ -4,11 +4,11 @@ import { useState } from 'react';
 import { Dialog, DialogContent, DialogTitle } from '@/components/ui/dialog';
 import { cn } from '@/lib/utils';
 
-interface PaymentModalProps {
+type PaymentModalProps = {
   isOpen: boolean;
   onClose: () => void;
   onContinue: (paymentMethod: string) => void;
-}
+};
 
 export function PaymentModal({
   isOpen,

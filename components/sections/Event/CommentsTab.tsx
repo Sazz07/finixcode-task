@@ -13,8 +13,6 @@ interface Comment {
   author: {
     name: string;
     initials: string;
-    bgColor: string;
-    textColor: string;
   };
   content: string;
   timestamp: string;
@@ -40,7 +38,6 @@ export function CommentsSection({
     e.preventDefault();
     if (!newComment.trim()) return;
 
-    // In a real app, you would send this to your API
     setNewComment('');
   };
 
@@ -61,11 +58,11 @@ export function CommentsSection({
           isReply ? 'bg-light-orange' : 'bg-secondary-pure-green'
         )}
       >
-        <div className='flex items-center justify-between mb-1'>
+        <div className='flex justify-between items-center mb-1'>
           <div className='flex items-center'>
             <div
               className={cn(
-                'flex items-center justify-center size-10 mr-3 text-lg rounded-full',
+                'flex justify-center items-center mr-3 text-lg rounded-full size-10',
                 isReply
                   ? 'bg-secondary-pure-green text-light-orange'
                   : 'bg-light-orange text-secondary-pure-green'
@@ -75,7 +72,7 @@ export function CommentsSection({
             </div>
             <span
               className={cn(
-                'font-medium text-2xl',
+                'text-2xl font-medium',
                 isReply ? 'text-secondary-pure-green' : 'text-light-orange'
               )}
             >
@@ -85,7 +82,7 @@ export function CommentsSection({
           <div className='flex items-center gap-3.5'>
             <span
               className={cn(
-                'text-xs md:text-lg font-light',
+                'text-xs font-light md:text-lg',
                 isReply ? 'text-secondary-pure-green' : 'text-light-orange'
               )}
             >
@@ -104,7 +101,7 @@ export function CommentsSection({
         </div>
         <p
           className={cn(
-            'text-tertiary-night-black md:text-xl font-light',
+            'font-light text-tertiary-night-black md:text-xl',
             isReply ? 'text-tertiary-night-black' : 'text-white'
           )}
         >
@@ -115,7 +112,7 @@ export function CommentsSection({
       {!isReply && (
         <button
           onClick={() => handleReply(comment.id)}
-          className='flex items-center  my-3 text-sm text-gray-500'
+          className='flex items-center my-3 text-sm text-gray-500'
         >
           <svg
             xmlns='http://www.w3.org/2000/svg'
@@ -182,7 +179,7 @@ export function CommentsSection({
           placeholder='Write a comment'
           value={newComment}
           onChange={(e) => setNewComment(e.target.value)}
-          className='rounded-full px-7 py-6'
+          className='px-7 py-6 rounded-full'
         />
       </div>
     </div>

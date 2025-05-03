@@ -3,10 +3,12 @@
 import * as React from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import * as TabsPrimitive from '@radix-ui/react-tabs';
+import { Suspense } from 'react'; // Add Suspense import
 
 import { cn } from '@/lib/utils';
 
-const TabsWithQuery = React.forwardRef<
+// Create a client component that uses useSearchParams
+const TabsWithQueryContent = React.forwardRef<
   React.ComponentRef<typeof TabsPrimitive.Root>,
   React.ComponentPropsWithoutRef<typeof TabsPrimitive.Root> & {
     queryParam?: string;
@@ -33,6 +35,23 @@ const TabsWithQuery = React.forwardRef<
       onValueChange={handleValueChange}
       {...props}
     />
+  );
+});
+
+TabsWithQueryContent.displayName = 'TabsWithQueryContent';
+
+// Create a wrapper component that uses Suspense
+const TabsWithQuery = React.forwardRef<
+  React.ComponentRef<typeof TabsPrimitive.Root>,
+  React.ComponentPropsWithoutRef<typeof TabsPrimitive.Root> & {
+    queryParam?: string;
+    defaultValue?: string;
+  }
+>(({ ...props }, ref) => {
+  return (
+    <Suspense fallback={<div>Loading tabs...</div>}>
+      <TabsWithQueryContent ref={ref} {...props} />
+    </Suspense>
   );
 });
 

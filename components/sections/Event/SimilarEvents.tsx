@@ -2,19 +2,18 @@
 
 import Image from 'next/image';
 import { useSearchParams } from 'next/navigation';
-import React, { useState, useRef } from 'react';
+import { useRef, Suspense } from 'react'; // Add Suspense import
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination, Autoplay, Navigation } from 'swiper/modules';
+import { Pagination, Autoplay } from 'swiper/modules';
 import type { Swiper as SwiperType } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/autoplay';
 import { similarEvents } from '@/lib/constant';
 
-const SimilarEvents = () => {
+function SimilarEventsContent() {
   const searchParams = useSearchParams();
   const activeTab = searchParams.get('tab');
-  const [visibleCards, setVisibleCards] = useState(3);
   const swiperRef = useRef<SwiperType | undefined>(undefined);
 
   const handlePrev = () => {
@@ -32,11 +31,11 @@ const SimilarEvents = () => {
   if (!activeTab || activeTab === 'info') {
     return (
       <div className='p-4 md:p-10 font-satoshi'>
-        <div className='flex items-center justify-between'>
+        <div className='flex justify-between items-center'>
           <h2 className='text-[32px] font-bold text-tertiary-night-black mb-5 md:mb-8 lg:mb-10'>
             Other events you may like
           </h2>
-          <div className='flex items-center gap-2 md:gap-4'>
+          <div className='flex gap-2 items-center md:gap-4'>
             <button
               onClick={handlePrev}
               className='p-3 rounded-full cursor-pointer bg-light-yellow'
@@ -124,7 +123,7 @@ const SimilarEvents = () => {
                       </SwiperSlide>
                     ))}
                   </Swiper>
-                  <button className='absolute z-10 top-5 right-5'>
+                  <button className='absolute top-5 right-5 z-10'>
                     <svg
                       xmlns='http://www.w3.org/2000/svg'
                       width='30'
@@ -188,8 +187,8 @@ const SimilarEvents = () => {
                   </button>
                 </div>
                 <div className='p-4'>
-                  <div className='flex items-center justify-between mb-1'>
-                    <div className='flex items-center gap-1 text-gray-body'>
+                  <div className='flex justify-between items-center mb-1'>
+                    <div className='flex gap-1 items-center text-gray-body'>
                       {event.categories.map((category, index) => (
                         <span
                           key={index}
@@ -220,7 +219,7 @@ const SimilarEvents = () => {
                   <div className='flex items-center mb-2 text-sm text-tertiary-night-black'>
                     <span>{event.date}</span>
                   </div>
-                  <div className='flex items-center gap-1 text-sm text-tertiary-night-black'>
+                  <div className='flex gap-1 items-center text-sm text-tertiary-night-black'>
                     <svg
                       xmlns='http://www.w3.org/2000/svg'
                       width='18'
@@ -241,7 +240,7 @@ const SimilarEvents = () => {
                       {event.spotsLeft} spots left
                     </p>
 
-                    <div className='flex items-center justify-between'>
+                    <div className='flex justify-between items-center'>
                       <span className='text-sm text-tertiary-night-black'>
                         {event.attending} attending
                       </span>
@@ -279,6 +278,16 @@ const SimilarEvents = () => {
       </div>
     );
   }
-};
+}
+
+function SimilarEvents() {
+  return (
+    <Suspense
+      fallback={<div className='p-4 md:p-10'>Loading similar events...</div>}
+    >
+      <SimilarEventsContent />
+    </Suspense>
+  );
+}
 
 export default SimilarEvents;

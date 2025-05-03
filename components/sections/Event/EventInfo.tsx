@@ -1,13 +1,4 @@
-import {
-  ArrowLeft,
-  ArrowRight,
-  Calendar,
-  Clock,
-  Heart,
-  Info,
-  MapPin,
-  Star,
-} from 'lucide-react';
+import { Calendar, Clock } from 'lucide-react';
 import Image from 'next/image';
 
 type EventInfoProps = {

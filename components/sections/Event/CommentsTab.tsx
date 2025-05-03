@@ -26,7 +26,7 @@ type CommentsSectionProps = {
 export function CommentsSection({
   comments: initialComments,
 }: CommentsSectionProps) {
-  const [comments, setComments] = useState<Comment[]>(initialComments);
+  const [comments] = useState<Comment[]>(initialComments);
   const [newComment, setNewComment] = useState('');
   const [replyingTo, setReplyingTo] = useState<string | null>(null);
 

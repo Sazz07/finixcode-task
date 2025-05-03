@@ -174,7 +174,7 @@ export function EventInfo({ eventData }: EventInfoProps) {
       </div>
 
       {/* Hosted By Section */}
-      <div className='pb-5 border-b py-6 md:py-10 lg:py-[60px]'>
+      <div className='pb-5  py-6 md:py-10 lg:py-[60px]'>
         <h2 className='text-[32px] font-bold text-tertiary-night-black mb-5 md:mb-8 lg:mb-10'>
           Hosted by
         </h2>
@@ -211,8 +211,6 @@ export function EventInfo({ eventData }: EventInfoProps) {
           </div>
         </div>
       </div>
-
-      {/* Similar Events Section */}
     </div>
   );
 }

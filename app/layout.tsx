@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import Navbar from '@/components/shared/Navbar';
 import { satoshi } from '@/lib/fonts';
+import SimilarEvents from '@/components/sections/Event/SimilarEvents';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -17,9 +18,10 @@ export default function RootLayout({
     <html lang='en' suppressHydrationWarning className={satoshi.variable}>
       <body className='font-satoshi'>
         <Navbar />
-        <main className='min-h-screen p-4 bg-light-yellow md:p-10'>
+        <main className='p-4 min-h-screen bg-light-yellow md:p-10'>
           {children}
         </main>
+        <SimilarEvents />
       </body>
     </html>
   );

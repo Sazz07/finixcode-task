@@ -30,6 +30,36 @@ type EventInfoProps = {
 export function EventInfo({ eventData }: EventInfoProps) {
   return (
     <div className=''>
+      {/* Tags */}
+      <div className='gap-2 pb-5 border-b pt-2 md:pb-10 lg:pb-[60px] flex flex-wrap items-center justify-between text-lg  md:text-2xl'>
+        <div className='flex items-center gap-3 text-gray-body'>
+          <span className='px-4 py-3  bg-[#E6F8F8] rounded-full md:px-6 md:py-5 '>
+            Football
+          </span>
+          <span className='px-4 py-3  bg-[#E6F8F8] rounded-full md:px-6 md:py-5 '>
+            Relay
+          </span>
+          <span className='px-4 py-3  bg-[#FFE8F0] rounded-full md:px-6 md:py-5 '>
+            Female
+          </span>
+          <span className='px-4 py-3  bg-[#EFEDFF] rounded-full md:px-6 md:py-5 '>
+            Age: Below 25
+          </span>
+        </div>
+        <div className='flex items-center gap-3'>
+          <Image
+            src={'/icons/difficulty_beginner.png'}
+            alt='difficulty_beginner_image'
+            width={100}
+            height={100}
+            className='size-6 md:size-10'
+          />
+          <span className='text-lg font-light md:text-2xl text-gray-body'>
+            Beginner
+          </span>
+        </div>
+      </div>
+
       {/* About Event Section */}
       <div className='pb-5 border-b py-6 md:py-10 lg:py-[60px]'>
         <h2 className='text-[32px] font-bold text-tertiary-night-black mb-5 md:mb-8 lg:mb-10'>
@@ -48,7 +78,7 @@ export function EventInfo({ eventData }: EventInfoProps) {
         <h2 className='text-[32px] font-bold text-tertiary-night-black mb-5 md:mb-8 lg:mb-10'>
           Location
         </h2>
-        <div className='flex gap-3 items-start'>
+        <div className='flex items-start gap-3'>
           <div>
             <h3 className='font-[700] text-secondary-gray-blue text-lg md:text-2xl'>
               {eventData.location.name}
@@ -64,46 +94,6 @@ export function EventInfo({ eventData }: EventInfoProps) {
         </div>
       </div>
 
-      {/* Date & Time Section */}
-      {/* <div className='space-y-2'>
-        <h2 className='text-xl font-bold'>Date & Time</h2>
-        <div className='flex items-start'>
-          <Calendar className='w-5 h-5 text-gray-500 mr-2 mt-0.5' />
-          <div>
-            <p className='text-gray-700'>Monday, March 14, 2023</p>
-          </div>
-        </div>
-        <div className='flex items-start'>
-          <Clock className='w-5 h-5 text-gray-500 mr-2 mt-0.5' />
-          <div>
-            <p className='text-gray-700'>7:30 PM - 9:30 PM</p>
-            <p className='text-sm text-gray-600'>
-              Arrive 15 minutes before start time
-            </p>
-          </div>
-        </div>
-      </div> */}
-
-      {/* Tags */}
-      {/* <div className='flex flex-wrap gap-2'>
-        <span className='px-3 py-1.5 bg-blue-50 text-blue-700 rounded-full text-sm'>
-          Football
-        </span>
-        <span className='px-3 py-1.5 bg-blue-50 text-blue-700 rounded-full text-sm'>
-          Relay
-        </span>
-        <span className='px-3 py-1.5 bg-purple-50 text-purple-700 rounded-full text-sm'>
-          Female
-        </span>
-        <span className='px-3 py-1.5 bg-gray-100 text-gray-700 rounded-full text-sm'>
-          Age: Below 25
-        </span>
-        <div className='flex items-center'>
-          <span className='mr-2 w-3 h-3 bg-green-400 rounded-full'></span>
-          <span className='text-sm text-gray-700'>Beginner</span>
-        </div>
-      </div> */}
-
       {/* Good to Know Section */}
       <div className='pb-5 border-b py-6 md:py-10 lg:py-[60px]'>
         <h2 className='text-[32px] font-bold text-tertiary-night-black mb-5 md:mb-8 lg:mb-10'>
@@ -116,19 +106,19 @@ export function EventInfo({ eventData }: EventInfoProps) {
               Highlights
             </h3>
             <ul className='space-y-2 text-sm font-light md:text-lg'>
-              <li className='flex gap-2 items-center'>
+              <li className='flex items-center gap-2'>
                 <Calendar className='size-4.5 mt-0.5  shrink-0' />
                 <span>Mon, 2 Dec</span>
               </li>
-              <li className='flex gap-2 items-center'>
+              <li className='flex items-center gap-2'>
                 <Clock className='size-4.5 mt-0.5  shrink-0' />
                 <span>7:30 AM - 8:30 AM</span>
               </li>
-              <li className='flex gap-2 items-center'>
+              <li className='flex items-center gap-2'>
                 <Clock className='size-4.5  shrink-0' />
                 <span>Arrive 15 min before start</span>
               </li>
-              <li className='flex gap-2 items-center'>
+              <li className='flex items-center gap-2'>
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
                   width='18'
@@ -178,7 +168,7 @@ export function EventInfo({ eventData }: EventInfoProps) {
         <h2 className='text-[32px] font-bold text-tertiary-night-black mb-5 md:mb-8 lg:mb-10'>
           Hosted by
         </h2>
-        <div className='flex gap-1 items-center p-4 text-white rounded-lg bg-secondary-gray-blue md:p-6 md:w-3/5'>
+        <div className='flex items-center gap-1 p-4 text-white rounded-lg bg-secondary-gray-blue md:p-6 md:w-3/5'>
           <div className='flex-shrink-0 mr-4'>
             <div className='overflow-hidden bg-gray-300 rounded-full size-14 md:size-24'>
               <Image
@@ -201,7 +191,7 @@ export function EventInfo({ eventData }: EventInfoProps) {
               </div>
             </div>
           </div>
-          <div className='flex gap-2 items-center md:gap-4'>
+          <div className='flex items-center gap-2 md:gap-4'>
             <button className='px-4 md:px-8 py-1.5 md:py-2.5 bg-[#F5FDCD] text-tertiary-night-black rounded-full text-sm md:text-base'>
               Message
             </button>

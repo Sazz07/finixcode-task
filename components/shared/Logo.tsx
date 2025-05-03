@@ -16,7 +16,7 @@ export default function Logo({ imgClassName, href }: LogoProps) {
         alt='logo'
         width={25}
         height={34}
-        className={cn(imgClassName)}
+        className={cn('w-[25px] h-[34px]', imgClassName)}
       />
     </div>
   );

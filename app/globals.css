@@ -54,6 +54,7 @@ body {
   --color-light-yellow: var(--light-yellow);
   --color-deep-light-gray-stroke: var(--deep-light-gray-stroke);
   --color-gray-body: var(--body-gray-color);
+  --color-light-orange: var(--light-orange);
   --font-satoshi: 'Satoshi', sans-serif;
 }
 
@@ -100,6 +101,7 @@ body {
   --light-yellow: #f4f5ef;
   --deep-light-gray-stroke: #e5e5e5;
   --body-gray-color: #4a4a4a;
+  --light-orange: #fde8cd;
 }
 
 .dark {

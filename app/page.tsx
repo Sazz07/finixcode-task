@@ -1,3 +1,4 @@
+import EvenSection from '@/components/sections/Event/EvenSection';
 import Banner from '@/components/shared/Banner';
 
 const imageList = [
@@ -10,8 +11,9 @@ const imageList = [
 
 export default function Home() {
   return (
-    <div className='text-primary-jithbo'>
+    <div className=''>
       <Banner images={imageList} />
+      <EvenSection />
     </div>
   );
 }

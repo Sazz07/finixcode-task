@@ -15,12 +15,12 @@ const Navbar = () => {
 
   return (
     <nav className='sticky top-0 z-10 w-full px-4 py-2 bg-white md:py-3 md:px-6 lg:py-3.5 lg:px-10'>
-      <div className='flex items-center justify-between'>
+      <div className='flex justify-between items-center'>
         {/* Logo */}
         <Logo />
 
         {/* Desktop Navigation */}
-        <div className='items-center justify-center flex-1 hidden gap-2 md:flex'>
+        <div className='hidden flex-1 gap-2 justify-center items-center md:flex'>
           {/* Date Selector */}
           <DatePicker />
 
@@ -29,25 +29,25 @@ const Navbar = () => {
             <Input
               type='search'
               placeholder='Search'
-              className='py-6 border rounded-full shadow-md'
+              className='py-6 rounded-full border shadow-md'
             />
 
             <Button
               size='icon'
               variant='ghost'
-              className='absolute transform -translate-y-1/2 rounded-full cursor-pointer right-2 top-1/2 bg-light-yellow hover:bg-gray-50'
+              className='absolute right-2 top-1/2 rounded-full transform -translate-y-1/2 cursor-pointer bg-light-yellow hover:bg-gray-50'
             >
               <Search className='size-5' />
             </Button>
           </div>
         </div>
 
-        <div className='flex items-center gap-2'>
+        <div className='flex gap-2 items-center'>
           <Button
             variant='outline'
-            className='items-center hidden px-3 py-6 font-medium border-0 rounded-full cursor-pointer md:flex text-secondary-pure-green hover:bg-gray-50 hover:text-primary-jithbo bg-light-yellow'
+            className='hidden items-center px-3 py-6 font-medium rounded-full border-0 cursor-pointer md:flex text-secondary-pure-green hover:bg-gray-50 hover:text-primary-jithbo bg-light-yellow'
           >
-            <div className='flex items-center justify-center mr-2'>
+            <div className='flex justify-center items-center mr-2'>
               <Image src={'/medal.svg'} alt='medal' width={13} height={18} />
             </div>
             Leaderboard
@@ -59,7 +59,7 @@ const Navbar = () => {
           >
             Login / Sign up
           </Button>
-          <div className='border rounded-full'>
+          <div className='rounded-full border'>
             <div
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className='flex items-center justify-center gap-2.5 py-1.5 px-2 cursor-pointer'
@@ -70,6 +70,7 @@ const Navbar = () => {
                 alt='user_profile'
                 width={22}
                 height={22}
+                className='size-[22px]'
               />
 
               {/* User Avatar */}
@@ -78,6 +79,7 @@ const Navbar = () => {
                 alt='user_profile'
                 width={37}
                 height={37}
+                className='size-[37px]'
               />
             </div>
           </div>
@@ -92,7 +94,7 @@ const Navbar = () => {
         )}
       >
         <div className='p-4'>
-          <div className='flex items-center justify-between mb-8'>
+          <div className='flex justify-between items-center mb-8'>
             <Logo />
             <button
               className='p-2 rounded-full cursor-pointer hover:bg-gray-100'
@@ -112,13 +114,13 @@ const Navbar = () => {
               <Input
                 type='search'
                 placeholder='Search'
-                className='py-6 border rounded-full'
+                className='py-6 rounded-full border'
               />
 
               <Button
                 size='icon'
                 variant='ghost'
-                className='absolute transform -translate-y-1/2 rounded-full cursor-pointer right-2 top-1/2 bg-light-yellow hover:bg-gray-50'
+                className='absolute right-2 top-1/2 rounded-full transform -translate-y-1/2 cursor-pointer bg-light-yellow hover:bg-gray-50'
               >
                 <Search className='size-5' />
               </Button>
@@ -126,9 +128,9 @@ const Navbar = () => {
 
             <Button
               variant='outline'
-              className='items-center w-full px-3 py-6 font-medium border-0 rounded-full cursor-pointer md:flex text-secondary-pure-green hover:bg-gray-50 hover:text-primary-jithbo bg-light-yellow'
+              className='items-center px-3 py-6 w-full font-medium rounded-full border-0 cursor-pointer md:flex text-secondary-pure-green hover:bg-gray-50 hover:text-primary-jithbo bg-light-yellow'
             >
-              <div className='flex items-center justify-center mr-2'>
+              <div className='flex justify-center items-center mr-2'>
                 <Image src={'/medal.svg'} alt='medal' width={13} height={18} />
               </div>
               Leaderboard
@@ -136,7 +138,7 @@ const Navbar = () => {
 
             <Button
               variant='outline'
-              className='w-full px-6 py-6 rounded-full cursor-pointer text-secondary-pure-green border-secondary-pure-green md:flex hover:bg-gray-50 hover:text-primary-jithbo'
+              className='px-6 py-6 w-full rounded-full cursor-pointer text-secondary-pure-green border-secondary-pure-green md:flex hover:bg-gray-50 hover:text-primary-jithbo'
             >
               Login / Sign up
             </Button>
